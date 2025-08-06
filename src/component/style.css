@@ -1,0 +1,362 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: #0009;
+    /* mờ nền */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-box {
+    position: relative;
+    width: 400px;
+    max-height: 268px;
+    height: fit-content;
+    background-color: #000;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.missing-box {
+    padding: 30px 15px;
+    border-radius: 10px;
+}
+
+.modal-upgrade {
+    padding: 24px;
+    height: fit-content !important;
+}
+
+.modal-name-box {
+    height: fit-content;
+}
+
+.modal-title {
+    font-size: 16px;
+    color: #fff;
+}
+
+.missing-title {
+    font-size: 20px;
+    color: #fff;
+}
+
+.modal-bottom {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.textarea-loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(52, 58, 64, 0.7);
+    /* dark transparent */
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+/* Spinner */
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #ccc;
+    border-top: 3px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.modal-input {
+    position: relative;
+    display: flex;
+    margin: 10px;
+    flex-direction: row;
+    gap: 10px;
+    flex: 1;
+    background-color: #343a40;
+}
+
+.modal-input-txt::placeholder {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+    color: #888888;
+    pointer-events: none;
+}
+
+.input-txt::placeholder {
+    color: #888888;
+    pointer-events: none;
+}
+
+.modal-txt {
+
+    transform: translateY(-50%);
+    color: #888888;
+    pointer-events: none;
+}
+
+.input-box {
+    width: 90%;
+    background-color: red;
+    position: absolute;
+    bottom: 10px;
+    min-height: 100px;
+    left: 5%;
+}
+
+.input-wrapper {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 870px;
+    background-color: #222;
+    border: 1px solid #fff;
+    border-radius: 40px;
+
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-wrapper-sm {
+    display: none;
+}
+
+.input-wrapper.left-show.right-show {
+    width: 35%;
+    margin-left: unset;
+    left: 45%
+}
+
+.input-wrapper.left-show {
+    width: 60%;
+    margin-left: 15.5%;
+    left: 46%
+}
+
+.input-wrapper.right-show {
+    width: 60%;
+    left: 36%;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-self: center;
+    font-size: 12px;
+}
+
+.input-title {
+    font-size: 14px;
+    color: #fff;
+    align-self: center;
+}
+
+.input-txt {
+    all: unset;
+    font-size: 16px;
+    padding: 2px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+}
+
+.open-btn {
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.incorrect-btn {
+    background-color: gray;
+}
+
+.incorrect-btn:hover {
+    cursor: not-allowed;
+}
+
+
+.correct-btn {
+    background-color: rgb(125, 166, 246);
+}
+
+.correct-btn:hover {
+    cursor: pointer;
+}
+
+.invalid-input {
+    border: 1px solid red !important;
+}
+
+.modal-input textarea {
+    width: 100%;
+    padding: 10px 35px 10px 10px;
+    box-sizing: border-box;
+    background-color: #272727;
+
+    color: #fff;
+    font-size: 20px;
+}
+
+.modal-input .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+}
+
+.icon-done {
+    font-size: 24px;
+    color: rgb(99, 208, 99);
+}
+
+.icon-view {
+    color: #fff;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.icon-view:hover {
+    cursor: pointer;
+    color: rgb(56, 208, 119);
+}
+
+
+@media(max-width: 1440px) {
+    .btns {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1280px) {
+    .input-wrapper {
+        display: none;
+    }
+
+    .input-wrapper-sm {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        background-color: #222;
+        border: 1px solid #fff;
+        border-radius: 40px;
+
+        padding: 15px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .input-wrapper-sm.left-show {
+        width: 50%;
+        margin-left: 15.5%;
+        left: 46%
+    }
+
+    .input-wrapper-sm.right-show {
+        display: none;
+    }
+
+    .input-wrapper-sm.left-show.right-show {
+        display: none;
+    }
+}
+
+.modal-content {
+    color: #ddd;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+}
+
+.modal-box h2 {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 1.5rem;
+    color: #fff;
+    font-size: 20px;
+    margin: 5px 0px 0px 10px;
+}
+
+.modal-box p {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: auto;
+}
+
+.input-email {
+    width: 100%;
+    box-sizing: border-box;
+    padding: .75rem;
+    margin: .75rem 0;
+    background: #272727;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    font-size: 1rem;
+    --placeholder-color: #aaa;
+}
+
+.btns-bottom {
+    gap: 8px;
+    margin-left: auto;
+    display: flex;
+}
+
+.cancel-btn {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.modal-btn {
+    background-color: transparent;
+    border: none;
+    color: #9ca3af;
+    font-size: 16px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.active-btn {
+    color: #fff;
+}
